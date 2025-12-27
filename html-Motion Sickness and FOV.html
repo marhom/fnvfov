@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+<body>
+<h1>Motion Sickness and FOV</h1><h2></h2>TLDR:</h2></div><div class="el-p"><p dir="auto">Low fields of view in games can exacerbate (or wholly cause) motion sickness.<br>
+This PCG article is a pretty decent (nb: i'm a computer science idiot, not the useful sort of scientist so take this endorsement with a grain of salt)<br>
+<a rel="noopener nofollow" class="external-link" href="https://www.pcgamer.com/why-low-fov-in-first-person-games-can-make-you-feel-nauseous/" target="_blank">https://www.pcgamer.com/why-low-fov-in-first-person-games-can-make-you-feel-nauseous/</a></p></div><div class="el-p"><p dir="auto">To see if this helps: change your FOV to 90+ in most games.</p></div><div class="el-p"><p dir="auto">In FNV:<br>
+1) Console (disables achievements unless certain mods are installed, can be used to test) <code>fov #</code> (ex: <code>fov 95</code> )<br>
+2) .ini - FNV can get weird and finicky about the .ini getting reset to default, but here are the two major commands for posterity<br>
+- <code>fDefaultWorldFOV</code> - This is the game FOV and the one you primarily want to change. Defaults to 75, set to 95+. This is <em>probably</em> not in the ini file by default, add it under <code>[Display]</code><br>
+- <code>fDefaultFOV</code> - FOV of menus. leave this alone<br>
+- <code>fPipboy1stPersonFOV</code> - pipboy FOV. This is probably fine at default of 47<br>
+- <code>fDefault1stPersonFOV</code> - these are your arms. I changed this to be 75 @ 95 world FOV<br>
+in Fallout.ini / FalloutPrefs.ini / Fallout_default.ini / Fallout_custom.ini:<br>
+<code>fPipboy1stPersonFOV=47.0</code><br>
+<code>fDefault1stPersonFOV=75.0000</code><br>
+<code>fDefaultWorldFOV=95.0000</code><br>
+3) mod - <a data-tooltip-position="top" aria-label="https://www.nexusmods.com/newvegas/mods/55085" data-href="https://www.nexusmods.com/newvegas/mods/55085" href="https://www.nexusmods.com/newvegas/mods/55085" class="internal-link is-unresolved" target="_blank" rel="noopener nofollow">FOV Slider</a> is the first one I slammed in to fuck around with; it was really easy to get up and running - it requires <a data-tooltip-position="top" aria-label="http://nvse.silverlock.org/beta/nvse_5_0_beta2.7z" data-href="http://nvse.silverlock.org/beta/nvse_5_0_beta2.7z" href="http://nvse.silverlock.org/beta/nvse_5_0_beta2.7z" class="internal-link is-unresolved" target="_blank" rel="noopener nofollow">NVSE</a> + the <a data-tooltip-position="top" aria-label="https://www.nexusmods.com/newvegas/mods/58277" data-href="https://www.nexusmods.com/newvegas/mods/58277" href="https://www.nexusmods.com/newvegas/mods/58277" class="internal-link is-unresolved" target="_blank" rel="noopener nofollow">JIP LN NVSE Plugin</a> and the <a data-tooltip-position="top" aria-label="https://www.nexusmods.com/newvegas/mods/42507" data-href="https://www.nexusmods.com/newvegas/mods/42507" href="https://www.nexusmods.com/newvegas/mods/42507" class="internal-link is-unresolved" target="_blank" rel="noopener nofollow">Mod Configuration Menu</a> and is probably the way I'd approach this. It adds a very simple menu to your esc menu that lets you tweak all the options (including some of the more esoteric scope related ones) on the fly.</p></div><div class="el-h1"><h1 data-heading="Motion Sickness" dir="auto">Motion Sickness</h1></div><div class="el-p"><p dir="auto">This isn't intended to be a silver bullet (or imply it is one) - stuff's complex, and there's lots of reasons that moving things - interactive and not - can make someone sick.  That said, FOV changes can be a pretty serious scalar - fucking with it might not solve the problem but it might improve the average case a hell of a lot.</p></div><div class="el-p"><p dir="auto">As a personal testimonial: I played Fallout 3 at launch - which has the same FOV problems as FNV - and never finished. Partially, this was due to my adhd; the other part was that it fucking sucked to play and I didn't understand what my body was telling me. I couldn't play in first person at all, and third person would routinely still make the game too uncomfortable to play indoors. I didn't know what the fuck at the time - I had some other similar problems with things like Half-Life 2, but never connected them. It wasn't until a few years later when I got mad at never having finished HL2 that I went and tried to figure out why I went from "not feeling great" to "I want to die and also have upended my entire digestive system at my monitor" within two seconds of getting into a vehicle. I hit on some stuff about FOV and started looking into that and, well: now I can basically play anything that has an FOV slider / access to cvars / if I can set up the physical space (distance, etc) right. Since tweaking my FOV in my recovered Fallout 3 save i have played for hours with zero complaints other than "god some of this fucking sucks ass for reasons unrelated to nausea".</p></div><div class="el-h1"><h1 data-heading="Field of View (FOV):" dir="auto">Field of View (FOV):</h1></div><div class="el-p"><p dir="auto">just going to cite wikipedia here </p></div><div class="el-blockquote"><blockquote dir="auto">
+<p>In video games the <strong>field of view</strong> or <strong>field of vision</strong> (abbreviated <strong>FOV</strong>) is the extent of the observable game world that is seen on the display at any given moment. It is typically measured as an angle, although whether this angle is the horizontal, vertical, or diagonal component of the field of view varies from game to game.</p>
+</blockquote></div><div class="el-p"><p dir="auto">- <a rel="noopener nofollow" class="external-link" href="https://en.wikipedia.org/wiki/Field_of_view_in_video_games#" target="_blank">https://en.wikipedia.org/wiki/Field_of_view_in_video_games#</a></p></div><div class="el-p"><p dir="auto"><span height="200" width="200" alt="img/FOV_in_video_games.svg" src="img/FOV_in_video_games.svg" class="internal-embed media-embed image-embed is-loaded"><img alt="img/FOV_in_video_games.svg" width="200" height="200" src="img/FOV_in_video_games.svg?1766268973303"></span><br>
+
+  When we talk about "FOV", the number in question is that interior camera angle of the green area. 90 - 1/4th of 360 degrees, so effectively one "direction" of vision - is a pretty good standard for comfort, but it may change some of the aesthetic decisions made in game. For instance, I mentioned HL2  before - there's FOV changes there that (IIRC? maybe it's in the PCG article) were made to bring the camera in tighter to showcase the expressiveness of the facial animations in Source; increasing the FOV to a playable number zooms the camera back out more.</p></div><div class="el-p"><p dir="auto">Practically, what this means is that if you <em>increase</em> the FOV, you <em>increase</em> the visible area of the game world that you can see. This gives a more immersive <em>feel</em> - you're not looking through a plate of glass, you're seeing things move in your periphery somewhat correctly, etc.</p></div>
+  <div class="el-h1"><h1 data-heading="Examples" dir="auto">Examples</h1></div>
+  <div class="el-p"><p dir="auto">Below are some practical examples of the default and a recommendedish higher FOV setting, in both first and third person. </p></div>
+
+  <div class="img-comp-container">
+  <div class="img-comp-img">
+    <img src="img/75-55 1st.jpg" width="1920">
+  </div>
+  <div class="img-comp-img img-comp-overlay">
+    <img src="img/95-75 1st.jpg" width="1920">
+  </div>
+</div>
+<br>
+<br>
+  <div class="img-comp-container">
+  <div class="img-comp-img">
+    <img src="img/75-55 3rd.jpg" width="1920">
+  </div>
+  <div class="img-comp-img img-comp-overlay">
+    <img src="img/95-75 3rd.jpg" width="1920">
+  </div>
+</div>  
+<script>
+  function initComparisons() {
+  var x, i;
+  /* Find all elements with an "overlay" class: */
+  x = document.getElementsByClassName("img-comp-overlay");
+  for (i = 0; i < x.length; i++) {
+    /* Once for each "overlay" element:
+    pass the "overlay" element as a parameter when executing the compareImages function: */
+    compareImages(x[i]);
+  }
+  function compareImages(img) {
+    var slider, img, clicked = 0, w, h;
+    /* Get the width and height of the img element */
+    w = img.offsetWidth;
+    h = img.offsetHeight;
+    /* Set the width of the img element to 50%: */
+    img.style.width = (w / 2) + "px";
+    /* Create slider: */
+    slider = document.createElement("DIV");
+    slider.setAttribute("class", "img-comp-slider");
+    /* Insert slider */
+    img.parentElement.insertBefore(slider, img);
+    /* Position the slider in the middle: */
+    slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+    slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+    /* Execute a function when the mouse button is pressed: */
+    slider.addEventListener("mousedown", slideReady);
+    /* And another function when the mouse button is released: */
+    window.addEventListener("mouseup", slideFinish);
+    /* Or touched (for touch screens: */
+    slider.addEventListener("touchstart", slideReady);
+     /* And released (for touch screens: */
+    window.addEventListener("touchend", slideFinish);
+    function slideReady(e) {
+      /* Prevent any other actions that may occur when moving over the image: */
+      e.preventDefault();
+      /* The slider is now clicked and ready to move: */
+      clicked = 1;
+      /* Execute a function when the slider is moved: */
+      window.addEventListener("mousemove", slideMove);
+      window.addEventListener("touchmove", slideMove);
+    }
+    function slideFinish() {
+      /* The slider is no longer clicked: */
+      clicked = 0;
+    }
+    function slideMove(e) {
+      var pos;
+      /* If the slider is no longer clicked, exit this function: */
+      if (clicked == 0) return false;
+      /* Get the cursor's x position: */
+      pos = getCursorPos(e)
+      /* Prevent the slider from being positioned outside the image: */
+      if (pos < 0) pos = 0;
+      if (pos > w) pos = w;
+      /* Execute a function that will resize the overlay image according to the cursor: */
+      slide(pos);
+    }
+    function getCursorPos(e) {
+      var a, x = 0;
+      e = (e.changedTouches) ? e.changedTouches[0] : e;
+      /* Get the x positions of the image: */
+      a = img.getBoundingClientRect();
+      /* Calculate the cursor's x coordinate, relative to the image: */
+      x = e.pageX - a.left;
+      /* Consider any page scrolling: */
+      x = x - window.pageXOffset;
+      return x;
+    }
+    function slide(x) {
+      /* Resize the image: */
+      img.style.width = x + "px";
+      /* Position the slider: */
+      slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+    }
+  }
+} 
+</script>
+<script>
+  initComparisons();
+</script>
+<div class="el-p"><p dir="auto">Increase the FOV too much though, and you risk getting a fisheye effect.<br>
+<div style="text-align: center;"><span align="center" src="fisheye2.jpg" class="internal-embed media-embed image-embed is-loaded"><img alt="center" width="1000" src="img/fisheye2.jpg?1766809196247"></span></p></div></div></div></div></div></body>
+</html>
