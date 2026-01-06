@@ -68,6 +68,7 @@ Finally, below are two videos of me running through Vault 34 in first/third pers
   }
   function compareImages(img) {
     var slider, img, clicked = 0, w, h;
+    await img.decode();
     /* Get the width and height of the img element */
     w = img.offsetWidth;
     h = img.offsetHeight;
